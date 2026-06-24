@@ -1,42 +1,63 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brume de Paris — Brume désinfectante parfumée</title>
-  <meta name="description" content="Brume de Paris — a collection of perfumed sanitizing mists, each a fragment of the city. Jardin des Tuileries, Nuit Saint-Honoré, Velours Blanc, Riviera Soleil." />
+  <title>Brume de Paris — The Perfumed Hand Sanitizer, Delivered Monthly</title>
+  <meta name="description" content="A refillable perfume-grade hand sanitizer subscription. One forever-bottle, a new Paris-inspired scent every month. Free shipping, cancel anytime." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ambient color field that morphs as you scroll -->
   <div class="aura" id="aura"></div>
   <div class="grain"></div>
 
+  <!-- announcement / urgency bar -->
+  <div class="announce" id="announce">
+    <span>✦ Founding-member offer — <b>40% off your first month</b> + free linen pouch. Ends in <b id="countdown">48:00:00</b></span>
+  </div>
+
   <!-- top chrome -->
-  <header class="nav">
+  <header class="nav" id="nav">
     <span class="nav-brand">Brume de Paris</span>
-    <span class="nav-mid">Maison de parfum · Paris</span>
-    <span class="nav-right">30mL</span>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#scents">Scents</a>
+      <a href="#plans">Plans</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#plans" class="nav-cta">Subscribe</a>
   </header>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <p class="kicker reveal">Brume désinfectante parfumée</p>
-    <h1 class="hero-title">
-      <span class="reveal" style="--d:.05s">La ville</span>
-      <span class="reveal serif-it" style="--d:.18s">en un</span>
-      <span class="reveal" style="--d:.31s">soupçon.</span>
-    </h1>
-    <p class="hero-sub reveal" style="--d:.5s">
-      Quatre fragments de Paris, scellés dans le verre. Un geste de soin,
-      un sillage qui reste.
-    </p>
-    <div class="hero-stage">
-      <!-- the four bottles drift in -->
-      <article class="bottle bottle--vert reveal" style="--d:.2s">
+    <div class="hero-copy">
+      <p class="trust-pill reveal">★★★★★ <span>4.9 · 12,400+ subscribers</span></p>
+      <h1 class="hero-title">
+        <span class="reveal" style="--d:.05s">Sanitize like</span>
+        <span class="reveal serif-it" style="--d:.16s">it's perfume.</span>
+      </h1>
+      <p class="hero-sub reveal" style="--d:.3s">
+        One refillable <em>forever-bottle</em>. A new Paris-inspired scent delivered
+        every month. 70% plant alcohol that actually works — wrapped in a fragrance
+        you'll want to reapply.
+      </p>
+      <div class="hero-cta reveal" style="--d:.42s">
+        <a href="#plans" class="btn btn--primary">Start your subscription →</a>
+        <a href="#how" class="btn btn--ghost">See how it works</a>
+      </div>
+      <ul class="hero-ticks reveal" style="--d:.54s">
+        <li>✓ Free monthly shipping</li>
+        <li>✓ Swap scents anytime</li>
+        <li>✓ Cancel anytime</li>
+      </ul>
+    </div>
+    <div class="hero-art">
+      <!-- real Higgsfield product shot drops in here; CSS bottle is the instant fallback -->
+      <img class="hero-shot" id="hero-shot" alt="Brume de Paris pocket sanitizer" />
+      <article class="bottle bottle--vert bottle--big bottle--hero" id="hero-bottle">
         <div class="bottle-cap"><span class="nozzle"></span></div>
         <div class="bottle-glass">
           <span class="stem"></span>
@@ -45,72 +66,75 @@
           <span class="b-foot">Brume désinfectante · 30mL</span>
         </div>
       </article>
-      <article class="bottle bottle--lav reveal" style="--d:.34s">
-        <div class="bottle-cap"><span class="nozzle"></span></div>
-        <div class="bottle-glass">
-          <span class="stem"></span>
-          <span class="b-brand">Brume de Paris</span>
-          <span class="b-name b-name--low">Nuit<br>Saint-Honoré</span>
-          <span class="b-foot">Brume désinfectante · 30mL</span>
-        </div>
-      </article>
-      <article class="bottle bottle--cream reveal" style="--d:.48s">
-        <div class="bottle-cap"><span class="nozzle"></span></div>
-        <div class="bottle-glass">
-          <span class="stem"></span>
-          <span class="b-brand">Brume de Paris</span>
-          <span class="b-name">Velours<br>Blanc</span>
-          <span class="b-foot">Brume désinfectante · 30mL</span>
-        </div>
-      </article>
-      <article class="bottle bottle--gold reveal" style="--d:.62s">
-        <div class="bottle-cap"><span class="nozzle"></span></div>
-        <div class="bottle-glass">
-          <span class="stem"></span>
-          <span class="b-brand">Brume de Paris</span>
-          <span class="b-name b-name--low">Riviera<br>Soleil</span>
-          <span class="b-foot">Brume désinfectante · 30mL</span>
-        </div>
-      </article>
     </div>
-    <div class="scroll-hint" id="scroll-hint">défiler ▾</div>
+    <div class="scroll-hint" id="scroll-hint">scroll ▾</div>
   </section>
 
-  <!-- ============ MANIFESTO ============ -->
-  <section class="manifesto">
+  <!-- ============ TRUST BAR ============ -->
+  <section class="trustbar">
+    <span>As seen in</span>
+    <b>VOGUE PARIS</b><b>MONOCLE</b><b>KINFOLK</b><b>GQ</b><b>ELLE</b>
+  </section>
+
+  <!-- ============ THE INNOVATION ============ -->
+  <section class="manifesto" id="why">
     <p class="reveal">
-      <span class="lead">Se purifier</span> ne devrait jamais sentir l'hôpital.
-      Nous avons pris le geste le plus banal du quotidien et l'avons habillé
-      d'un parfum — pensé comme une <em>eau de toilette</em>, porté comme un secret.
+      <span class="lead">Hand sanitizer</span> was never meant to smell like a hospital.
+      So we built a <em>refillable</em> one that smells like the 1st arrondissement —
+      and made it land on your doorstep before you run out.
     </p>
   </section>
 
-  <!-- ============ THE FOUR — pinned color worlds ============ -->
-  <section class="collection" id="collection">
+  <section class="pillars">
+    <article class="pillar reveal">
+      <span class="pillar-ic">♻︎</span>
+      <h3>One forever-bottle</h3>
+      <p>A weighted glass-and-aluminium spray you keep for life. Refills arrive in compostable pods — <b>0 single-use plastic</b>.</p>
+    </article>
+    <article class="pillar reveal" style="--d:.1s">
+      <span class="pillar-ic">✦</span>
+      <h3>A new scent monthly</h3>
+      <p>Our perfumers release one limited Paris-inspired mist each month. Keep it, skip it, or repeat your favourite.</p>
+    </article>
+    <article class="pillar reveal" style="--d:.2s">
+      <span class="pillar-ic">⏱</span>
+      <h3>Never run dry</h3>
+      <p>Refills ship on your rhythm — every 30, 45 or 60 days. Protection that's actually pleasant to reach for.</p>
+    </article>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="how" id="how">
+    <p class="kicker reveal">How it works</p>
+    <h2 class="sec-title reveal" style="--d:.08s">Three steps to a <span class="serif-it">better ritual.</span></h2>
+    <div class="steps">
+      <article class="step reveal"><span class="step-no">1</span><h3>Take the scent quiz</h3><p>Sixty seconds. We match your signature scent — fresh, floral, woody or solar.</p></article>
+      <article class="step reveal" style="--d:.1s"><span class="step-no">2</span><h3>Get your forever-bottle</h3><p>Your first kit ships free: the keep-forever bottle + your starter mist.</p></article>
+      <article class="step reveal" style="--d:.2s"><span class="step-no">3</span><h3>Refill, re-mist, repeat</h3><p>A fresh scent arrives monthly. Pause, swap or cancel in one tap.</p></article>
+    </div>
+    <a href="#plans" class="btn btn--primary reveal" style="--d:.3s">Find my scent →</a>
+  </section>
+
+  <!-- ============ THE FOUR — scent worlds ============ -->
+  <section class="collection" id="scents">
+    <div class="collection-head">
+      <p class="kicker reveal">This season's collection</p>
+      <h2 class="sec-title reveal" style="--d:.08s">Four fragments of Paris.</h2>
+    </div>
     <div class="collection-rail">
 
       <article class="scent" data-scent="vert">
         <div class="scent-copy">
           <span class="scent-no">01</span>
-          <p class="scent-note reveal">Vert · feuillu · rosée du matin</p>
+          <p class="scent-note reveal">Fresh · green · morning dew</p>
           <h2 class="scent-title reveal" style="--d:.08s">Jardin<br><span class="serif-it">des Tuileries</span></h2>
-          <p class="scent-text reveal" style="--d:.16s">
-            Buis taillé, herbe coupée et la fraîcheur minérale d'un bassin
-            sous les marronniers. Une promenade verte à dix heures du matin.
-          </p>
-          <ul class="scent-notes reveal" style="--d:.24s">
-            <li>Galbanum</li><li>Pétale de buis</li><li>Vétiver clair</li>
-          </ul>
+          <p class="scent-text reveal" style="--d:.16s">Clipped boxwood, cut grass and the mineral cool of a fountain under the chestnut trees. A green walk at ten in the morning.</p>
+          <ul class="scent-notes reveal" style="--d:.24s"><li>Galbanum</li><li>Boxwood</li><li>Clear vetiver</li></ul>
         </div>
         <div class="scent-art">
           <article class="bottle bottle--vert bottle--big">
             <div class="bottle-cap"><span class="nozzle"></span></div>
-            <div class="bottle-glass">
-              <span class="stem"></span>
-              <span class="b-brand">Brume de Paris</span>
-              <span class="b-name">Jardin<br>des Tuileries</span>
-              <span class="b-foot">Brume désinfectante · 30mL</span>
-            </div>
+            <div class="bottle-glass"><span class="stem"></span><span class="b-brand">Brume de Paris</span><span class="b-name">Jardin<br>des Tuileries</span><span class="b-foot">Brume désinfectante · 30mL</span></div>
           </article>
         </div>
       </article>
@@ -118,25 +142,15 @@
       <article class="scent" data-scent="lav">
         <div class="scent-copy">
           <span class="scent-no">02</span>
-          <p class="scent-note reveal">Floral · poudré · après-minuit</p>
+          <p class="scent-note reveal">Floral · powdery · after midnight</p>
           <h2 class="scent-title reveal" style="--d:.08s">Nuit<br><span class="serif-it">Saint-Honoré</span></h2>
-          <p class="scent-text reveal" style="--d:.16s">
-            Iris froid, violette et musc sur le pavé mouillé. Le parfum d'une
-            femme qui rentre tard, manteau encore sur les épaules.
-          </p>
-          <ul class="scent-notes reveal" style="--d:.24s">
-            <li>Iris pallida</li><li>Violette de Parme</li><li>Musc blanc</li>
-          </ul>
+          <p class="scent-text reveal" style="--d:.16s">Cold iris, violet and white musk over wet cobblestones. The scent of a woman coming home late, coat still on her shoulders.</p>
+          <ul class="scent-notes reveal" style="--d:.24s"><li>Iris pallida</li><li>Parma violet</li><li>White musk</li></ul>
         </div>
         <div class="scent-art">
           <article class="bottle bottle--lav bottle--big">
             <div class="bottle-cap"><span class="nozzle"></span></div>
-            <div class="bottle-glass">
-              <span class="stem"></span>
-              <span class="b-brand">Brume de Paris</span>
-              <span class="b-name b-name--low">Nuit<br>Saint-Honoré</span>
-              <span class="b-foot">Brume désinfectante · 30mL</span>
-            </div>
+            <div class="bottle-glass"><span class="stem"></span><span class="b-brand">Brume de Paris</span><span class="b-name b-name--low">Nuit<br>Saint-Honoré</span><span class="b-foot">Brume désinfectante · 30mL</span></div>
           </article>
         </div>
       </article>
@@ -144,25 +158,15 @@
       <article class="scent" data-scent="cream">
         <div class="scent-copy">
           <span class="scent-no">03</span>
-          <p class="scent-note reveal">Boisé · lacté · peau nue</p>
+          <p class="scent-note reveal">Woody · milky · bare skin</p>
           <h2 class="scent-title reveal" style="--d:.08s">Velours<br><span class="serif-it">Blanc</span></h2>
-          <p class="scent-text reveal" style="--d:.16s">
-            Santal crémeux, amande douce et cachemire. Le confort d'un cachemire
-            tiède — la signature la plus intime de la maison.
-          </p>
-          <ul class="scent-notes reveal" style="--d:.24s">
-            <li>Santal blanc</li><li>Fève tonka</li><li>Bois de cachemire</li>
-          </ul>
+          <p class="scent-text reveal" style="--d:.16s">Creamy sandalwood, sweet almond and cashmere wood. The comfort of warm cashmere — the house's most intimate signature.</p>
+          <ul class="scent-notes reveal" style="--d:.24s"><li>White sandalwood</li><li>Tonka bean</li><li>Cashmere wood</li></ul>
         </div>
         <div class="scent-art">
           <article class="bottle bottle--cream bottle--big">
             <div class="bottle-cap"><span class="nozzle"></span></div>
-            <div class="bottle-glass">
-              <span class="stem"></span>
-              <span class="b-brand">Brume de Paris</span>
-              <span class="b-name">Velours<br>Blanc</span>
-              <span class="b-foot">Brume désinfectante · 30mL</span>
-            </div>
+            <div class="bottle-glass"><span class="stem"></span><span class="b-brand">Brume de Paris</span><span class="b-name">Velours<br>Blanc</span><span class="b-foot">Brume désinfectante · 30mL</span></div>
           </article>
         </div>
       </article>
@@ -170,25 +174,15 @@
       <article class="scent" data-scent="gold">
         <div class="scent-copy">
           <span class="scent-no">04</span>
-          <p class="scent-note reveal">Solaire · ambré · fin d'été</p>
+          <p class="scent-note reveal">Solar · amber · late summer</p>
           <h2 class="scent-title reveal" style="--d:.08s">Riviera<br><span class="serif-it">Soleil</span></h2>
-          <p class="scent-text reveal" style="--d:.16s">
-            Néroli, ambre doré et sel chaud sur la peau. Le dernier jour de
-            vacances, capturé avant qu'il ne s'évapore.
-          </p>
-          <ul class="scent-notes reveal" style="--d:.24s">
-            <li>Néroli</li><li>Ambre solaire</li><li>Sel de mer</li>
-          </ul>
+          <p class="scent-text reveal" style="--d:.16s">Neroli, golden amber and warm salt on the skin. The last day of the holidays, captured before it evaporates.</p>
+          <ul class="scent-notes reveal" style="--d:.24s"><li>Neroli</li><li>Solar amber</li><li>Sea salt</li></ul>
         </div>
         <div class="scent-art">
           <article class="bottle bottle--gold bottle--big">
             <div class="bottle-cap"><span class="nozzle"></span></div>
-            <div class="bottle-glass">
-              <span class="stem"></span>
-              <span class="b-brand">Brume de Paris</span>
-              <span class="b-name b-name--low">Riviera<br>Soleil</span>
-              <span class="b-foot">Brume désinfectante · 30mL</span>
-            </div>
+            <div class="bottle-glass"><span class="stem"></span><span class="b-brand">Brume de Paris</span><span class="b-name b-name--low">Riviera<br>Soleil</span><span class="b-foot">Brume désinfectante · 30mL</span></div>
           </article>
         </div>
       </article>
@@ -198,35 +192,95 @@
 
   <!-- ============ STATS ============ -->
   <section class="stats">
-    <div class="stat">
-      <span class="stat-num" data-count="70" data-suffix="%">0</span>
-      <span class="stat-label">Alcool végétal · désinfecte</span>
+    <div class="stat"><span class="stat-num" data-count="70" data-suffix="%">0</span><span class="stat-label">Plant alcohol · kills 99.9%</span></div>
+    <div class="stat"><span class="stat-num" data-count="12400" data-suffix="+">0</span><span class="stat-label">Subscribers in 14 countries</span></div>
+    <div class="stat"><span class="stat-num" data-count="0" data-suffix="">0</span><span class="stat-label">Single-use plastic</span></div>
+    <div class="stat"><span class="stat-num" data-count="4.9" data-suffix="★">0</span><span class="stat-label">Average member rating</span></div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="plans">
+    <p class="kicker reveal">Choose your rhythm</p>
+    <h2 class="sec-title reveal" style="--d:.08s">Join the maison.</h2>
+    <p class="pricing-sub reveal" style="--d:.16s">All plans include the forever-bottle, free shipping, and full flexibility. Cancel anytime.</p>
+
+    <div class="plan-toggle reveal" style="--d:.24s">
+      <button class="pt-btn is-active" data-cycle="monthly">Monthly</button>
+      <button class="pt-btn" data-cycle="annual">Annual <span class="save-tag">save 20%</span></button>
     </div>
-    <div class="stat">
-      <span class="stat-num" data-count="4" data-suffix="">0</span>
-      <span class="stat-label">Fragments de Paris</span>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <h3>Découverte</h3>
+        <p class="plan-desc">One mist a month. The classic ritual.</p>
+        <p class="plan-price"><span class="amt" data-monthly="19" data-annual="15">19</span><span class="per">/mo</span></p>
+        <ul class="plan-feat"><li>1 scent / month</li><li>Forever-bottle included</li><li>Free shipping</li><li>Swap or skip anytime</li></ul>
+        <a href="#" class="btn btn--ghost plan-btn">Choose Découverte</a>
+      </article>
+
+      <article class="plan plan--featured reveal" style="--d:.1s">
+        <span class="plan-badge">Most popular</span>
+        <h3>Maison</h3>
+        <p class="plan-desc">Two mists a month + early access to drops.</p>
+        <p class="plan-price"><span class="amt" data-monthly="32" data-annual="26">32</span><span class="per">/mo</span></p>
+        <ul class="plan-feat"><li>2 scents / month</li><li>Forever-bottle + travel case</li><li>Early access to limited drops</li><li>20% off all refills & gifts</li><li>Free shipping · cancel anytime</li></ul>
+        <a href="#" class="btn btn--primary plan-btn">Choose Maison</a>
+        <p class="plan-foot">40% off your first month</p>
+      </article>
+
+      <article class="plan reveal" style="--d:.2s">
+        <h3>Collectionneur</h3>
+        <p class="plan-desc">The full collection, every season.</p>
+        <p class="plan-price"><span class="amt" data-monthly="49" data-annual="39">49</span><span class="per">/mo</span></p>
+        <ul class="plan-feat"><li>4 scents / month</li><li>Two forever-bottles</li><li>Concierge scent profiling</li><li>Annual archive bottle</li></ul>
+        <a href="#" class="btn btn--ghost plan-btn">Choose Collectionneur</a>
+      </article>
     </div>
-    <div class="stat">
-      <span class="stat-num" data-count="30" data-suffix="mL">0</span>
-      <span class="stat-label">Format de poche</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num" data-count="100" data-suffix="%">0</span>
-      <span class="stat-label">Vegan & sans cruauté</span>
+    <p class="guarantee reveal"><b>30-day fragrance guarantee.</b> Don't love your first scent? We'll send another free, or refund you in full. No questions.</p>
+  </section>
+
+  <!-- ============ SOCIAL PROOF ============ -->
+  <section class="reviews">
+    <p class="kicker reveal">Loved by 12,400+</p>
+    <h2 class="sec-title reveal" style="--d:.08s">The ritual people <span class="serif-it">look forward to.</span></h2>
+    <div class="review-grid">
+      <figure class="review reveal"><div class="stars">★★★★★</div><blockquote>"I went from hating sanitizer to keeping three on my desk. <em>Velours Blanc</em> is basically a fine fragrance."</blockquote><figcaption>— Camille R., Paris</figcaption></figure>
+      <figure class="review reveal" style="--d:.1s"><div class="stars">★★★★★</div><blockquote>"The refill pods mean I never think about buying it again. It just shows up. Genius."</blockquote><figcaption>— Daniel K., London</figcaption></figure>
+      <figure class="review reveal" style="--d:.2s"><div class="stars">★★★★★</div><blockquote>"People stop me to ask what perfume I'm wearing. It's my hand sanitizer."</blockquote><figcaption>— Sofia M., Milan</figcaption></figure>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
-  <section class="cta">
-    <p class="kicker reveal">Le coffret découverte</p>
-    <h2 class="cta-title reveal" style="--d:.1s">Emportez la ville<br><span class="serif-it">avec vous.</span></h2>
-    <p class="cta-sub reveal" style="--d:.2s">Les quatre brumes, un étui de lin. Édition fondatrice.</p>
-    <a class="cta-btn reveal" style="--d:.3s" href="#hero">Découvrir le coffret</a>
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <p class="kicker reveal">Good questions</p>
+    <h2 class="sec-title reveal" style="--d:.08s">Everything you're wondering.</h2>
+    <div class="faq-list">
+      <details class="faq-item reveal"><summary>Does it actually sanitize?</summary><p>Yes — 70% plant-derived alcohol, kills 99.9% of common germs, dermatologically tested. It just happens to smell extraordinary.</p></details>
+      <details class="faq-item reveal"><summary>How does the forever-bottle work?</summary><p>You receive one weighted glass-and-aluminium spray. Each month a compostable refill pod arrives — top up in seconds, recycle the pod. No single-use plastic, ever.</p></details>
+      <details class="faq-item reveal"><summary>Can I choose my scents?</summary><p>Absolutely. Take the 60-second quiz for a recommendation, then keep, skip or swap any month from your account in one tap.</p></details>
+      <details class="faq-item reveal"><summary>Can I cancel anytime?</summary><p>Anytime, no fees, no phone calls. Pause or cancel from your dashboard. Plus a 30-day money-back fragrance guarantee.</p></details>
+      <details class="faq-item reveal"><summary>When does it ship?</summary><p>Your first kit ships within 48 hours, free. After that, refills arrive on your chosen 30/45/60-day rhythm.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="cta" id="join">
+    <p class="kicker reveal">The founding edition</p>
+    <h2 class="cta-title reveal" style="--d:.1s">Carry the city<br><span class="serif-it">with you.</span></h2>
+    <p class="cta-sub reveal" style="--d:.2s">40% off your first month + a free linen pouch. While founding spots last.</p>
+    <a class="btn btn--primary btn--lg reveal" style="--d:.3s" href="#plans">Start your subscription →</a>
+    <p class="cta-fine reveal" style="--d:.38s">Free shipping · Swap anytime · Cancel anytime · 30-day guarantee</p>
     <footer class="foot">
       <span>Brume de Paris</span>
-      <span>Made with the scroll-cinematic skill · 2026</span>
+      <span>Built with the scroll-cinematic skill · Higgsfield MCP · 2026</span>
     </footer>
   </section>
+
+  <!-- sticky conversion bar -->
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="sc-text"><b>Brume de Paris</b> · from $15/mo · 40% off first month</span>
+    <a href="#plans" class="btn btn--primary">Subscribe →</a>
+  </div>
 
   <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
   <script src="app.js"></script>
