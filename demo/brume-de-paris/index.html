@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brume de Paris — Brume désinfectante parfumée</title>
+  <meta name="description" content="Brume de Paris — a collection of perfumed sanitizing mists, each a fragment of the city. Jardin des Tuileries, Nuit Saint-Honoré, Velours Blanc, Riviera Soleil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ambient color field that morphs as you scroll -->
+  <div class="aura" id="aura"></div>
+  <div class="grain"></div>
+
+  <!-- top chrome -->
+  <header class="nav">
+    <span class="nav-brand">Brume de Paris</span>
+    <span class="nav-mid">Maison de parfum · Paris</span>
+    <span class="nav-right">30mL</span>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <p class="kicker reveal">Brume désinfectante parfumée</p>
+    <h1 class="hero-title">
+      <span class="reveal" style="--d:.05s">La ville</span>
+      <span class="reveal serif-it" style="--d:.18s">en un</span>
+      <span class="reveal" style="--d:.31s">soupçon.</span>
+    </h1>
+    <p class="hero-sub reveal" style="--d:.5s">
+      Quatre fragments de Paris, scellés dans le verre. Un geste de soin,
+      un sillage qui reste.
+    </p>
+    <div class="hero-stage">
+      <!-- the four bottles drift in -->
+      <article class="bottle bottle--vert reveal" style="--d:.2s">
+        <div class="bottle-cap"><span class="nozzle"></span></div>
+        <div class="bottle-glass">
+          <span class="stem"></span>
+          <span class="b-brand">Brume de Paris</span>
+          <span class="b-name">Jardin<br>des Tuileries</span>
+          <span class="b-foot">Brume désinfectante · 30mL</span>
+        </div>
+      </article>
+      <article class="bottle bottle--lav reveal" style="--d:.34s">
+        <div class="bottle-cap"><span class="nozzle"></span></div>
+        <div class="bottle-glass">
+          <span class="stem"></span>
+          <span class="b-brand">Brume de Paris</span>
+          <span class="b-name b-name--low">Nuit<br>Saint-Honoré</span>
+          <span class="b-foot">Brume désinfectante · 30mL</span>
+        </div>
+      </article>
+      <article class="bottle bottle--cream reveal" style="--d:.48s">
+        <div class="bottle-cap"><span class="nozzle"></span></div>
+        <div class="bottle-glass">
+          <span class="stem"></span>
+          <span class="b-brand">Brume de Paris</span>
+          <span class="b-name">Velours<br>Blanc</span>
+          <span class="b-foot">Brume désinfectante · 30mL</span>
+        </div>
+      </article>
+      <article class="bottle bottle--gold reveal" style="--d:.62s">
+        <div class="bottle-cap"><span class="nozzle"></span></div>
+        <div class="bottle-glass">
+          <span class="stem"></span>
+          <span class="b-brand">Brume de Paris</span>
+          <span class="b-name b-name--low">Riviera<br>Soleil</span>
+          <span class="b-foot">Brume désinfectante · 30mL</span>
+        </div>
+      </article>
+    </div>
+    <div class="scroll-hint" id="scroll-hint">défiler ▾</div>
+  </section>
+
+  <!-- ============ MANIFESTO ============ -->
+  <section class="manifesto">
+    <p class="reveal">
+      <span class="lead">Se purifier</span> ne devrait jamais sentir l'hôpital.
+      Nous avons pris le geste le plus banal du quotidien et l'avons habillé
+      d'un parfum — pensé comme une <em>eau de toilette</em>, porté comme un secret.
+    </p>
+  </section>
+
+  <!-- ============ THE FOUR — pinned color worlds ============ -->
+  <section class="collection" id="collection">
+    <div class="collection-rail">
+
+      <article class="scent" data-scent="vert">
+        <div class="scent-copy">
+          <span class="scent-no">01</span>
+          <p class="scent-note reveal">Vert · feuillu · rosée du matin</p>
+          <h2 class="scent-title reveal" style="--d:.08s">Jardin<br><span class="serif-it">des Tuileries</span></h2>
+          <p class="scent-text reveal" style="--d:.16s">
+            Buis taillé, herbe coupée et la fraîcheur minérale d'un bassin
+            sous les marronniers. Une promenade verte à dix heures du matin.
+          </p>
+          <ul class="scent-notes reveal" style="--d:.24s">
+            <li>Galbanum</li><li>Pétale de buis</li><li>Vétiver clair</li>
+          </ul>
+        </div>
+        <div class="scent-art">
+          <article class="bottle bottle--vert bottle--big">
+            <div class="bottle-cap"><span class="nozzle"></span></div>
+            <div class="bottle-glass">
+              <span class="stem"></span>
+              <span class="b-brand">Brume de Paris</span>
+              <span class="b-name">Jardin<br>des Tuileries</span>
+              <span class="b-foot">Brume désinfectante · 30mL</span>
+            </div>
+          </article>
+        </div>
+      </article>
+
+      <article class="scent" data-scent="lav">
+        <div class="scent-copy">
+          <span class="scent-no">02</span>
+          <p class="scent-note reveal">Floral · poudré · après-minuit</p>
+          <h2 class="scent-title reveal" style="--d:.08s">Nuit<br><span class="serif-it">Saint-Honoré</span></h2>
+          <p class="scent-text reveal" style="--d:.16s">
+            Iris froid, violette et musc sur le pavé mouillé. Le parfum d'une
+            femme qui rentre tard, manteau encore sur les épaules.
+          </p>
+          <ul class="scent-notes reveal" style="--d:.24s">
+            <li>Iris pallida</li><li>Violette de Parme</li><li>Musc blanc</li>
+          </ul>
+        </div>
+        <div class="scent-art">
+          <article class="bottle bottle--lav bottle--big">
+            <div class="bottle-cap"><span class="nozzle"></span></div>
+            <div class="bottle-glass">
+              <span class="stem"></span>
+              <span class="b-brand">Brume de Paris</span>
+              <span class="b-name b-name--low">Nuit<br>Saint-Honoré</span>
+              <span class="b-foot">Brume désinfectante · 30mL</span>
+            </div>
+          </article>
+        </div>
+      </article>
+
+      <article class="scent" data-scent="cream">
+        <div class="scent-copy">
+          <span class="scent-no">03</span>
+          <p class="scent-note reveal">Boisé · lacté · peau nue</p>
+          <h2 class="scent-title reveal" style="--d:.08s">Velours<br><span class="serif-it">Blanc</span></h2>
+          <p class="scent-text reveal" style="--d:.16s">
+            Santal crémeux, amande douce et cachemire. Le confort d'un cachemire
+            tiède — la signature la plus intime de la maison.
+          </p>
+          <ul class="scent-notes reveal" style="--d:.24s">
+            <li>Santal blanc</li><li>Fève tonka</li><li>Bois de cachemire</li>
+          </ul>
+        </div>
+        <div class="scent-art">
+          <article class="bottle bottle--cream bottle--big">
+            <div class="bottle-cap"><span class="nozzle"></span></div>
+            <div class="bottle-glass">
+              <span class="stem"></span>
+              <span class="b-brand">Brume de Paris</span>
+              <span class="b-name">Velours<br>Blanc</span>
+              <span class="b-foot">Brume désinfectante · 30mL</span>
+            </div>
+          </article>
+        </div>
+      </article>
+
+      <article class="scent" data-scent="gold">
+        <div class="scent-copy">
+          <span class="scent-no">04</span>
+          <p class="scent-note reveal">Solaire · ambré · fin d'été</p>
+          <h2 class="scent-title reveal" style="--d:.08s">Riviera<br><span class="serif-it">Soleil</span></h2>
+          <p class="scent-text reveal" style="--d:.16s">
+            Néroli, ambre doré et sel chaud sur la peau. Le dernier jour de
+            vacances, capturé avant qu'il ne s'évapore.
+          </p>
+          <ul class="scent-notes reveal" style="--d:.24s">
+            <li>Néroli</li><li>Ambre solaire</li><li>Sel de mer</li>
+          </ul>
+        </div>
+        <div class="scent-art">
+          <article class="bottle bottle--gold bottle--big">
+            <div class="bottle-cap"><span class="nozzle"></span></div>
+            <div class="bottle-glass">
+              <span class="stem"></span>
+              <span class="b-brand">Brume de Paris</span>
+              <span class="b-name b-name--low">Riviera<br>Soleil</span>
+              <span class="b-foot">Brume désinfectante · 30mL</span>
+            </div>
+          </article>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="stat">
+      <span class="stat-num" data-count="70" data-suffix="%">0</span>
+      <span class="stat-label">Alcool végétal · désinfecte</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" data-count="4" data-suffix="">0</span>
+      <span class="stat-label">Fragments de Paris</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" data-count="30" data-suffix="mL">0</span>
+      <span class="stat-label">Format de poche</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" data-count="100" data-suffix="%">0</span>
+      <span class="stat-label">Vegan & sans cruauté</span>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta">
+    <p class="kicker reveal">Le coffret découverte</p>
+    <h2 class="cta-title reveal" style="--d:.1s">Emportez la ville<br><span class="serif-it">avec vous.</span></h2>
+    <p class="cta-sub reveal" style="--d:.2s">Les quatre brumes, un étui de lin. Édition fondatrice.</p>
+    <a class="cta-btn reveal" style="--d:.3s" href="#hero">Découvrir le coffret</a>
+    <footer class="foot">
+      <span>Brume de Paris</span>
+      <span>Made with the scroll-cinematic skill · 2026</span>
+    </footer>
+  </section>
+
+  <script src="https://unpkg.com/lenis@1.3.21/dist/lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
